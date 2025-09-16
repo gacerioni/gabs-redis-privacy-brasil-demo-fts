@@ -119,7 +119,7 @@ def add_synonyms():
     # (Multi-word alias like "miss bumbum" is handled via the `aka` field above.)
     terms = [
         "andressa", "urach",
-        "andresa", "andréssa", "uraque", "andressa-urach"
+        "andresa", "andréssa", "uraque", "andressa-urach", "rabeta", "maluca"
     ]
     R.execute_command("FT.SYNUPDATE", INDEX, "syn:andressa", *terms)
 
@@ -154,6 +154,11 @@ def search_examples():
         ("Fuzzy LD=2 on surname ('%%uratch%%')", '@name:(%%uratch%%)'),
         ("Phonetic on ('Andresa Oraki' ~ 'Andressa Urach')", '@name:(Andresa Oraki)'),
         ("Portuguese stemming on bio ('@bio:apresentações')", '@bio:(apresentações)'),
+        ("Synonym group (term 'uraque')", '@name:(uraque)'),
+        ("Synonym group (term 'andresa')", '@name:(andresa)'),
+        ("Synonym group (term 'rabeta')", '@name:(rabeta)'),
+        ("Synonym group (term 'maluca')", '@name:(maluca)'),
+
     ]
     for label, q in tests:
         print("\n=== " + label + " ===")
